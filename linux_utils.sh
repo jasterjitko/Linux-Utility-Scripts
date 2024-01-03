@@ -3,12 +3,12 @@
 #---------------------------------------------------------
 # Linux Utility Script
 # Author: jasterjitko
-# Version: 1.0
+# Version: 1.1
 # License: MIT
 #---------------------------------------------------------
 
 # Description:
-# This script provides convenient utilities for working with Linux.
+# This script provides a set of convenient utilities for working with Linux.
 
 #---------------------------------------------------------
 # Function to display processes by port
@@ -30,7 +30,16 @@ find_file() {
   find . -name $filename
 }
 
-# Add your own functions and utilities here
+#---------------------------------------------------------
+# Function to archive the current directory
+# Example usage: archive_current_directory
+#---------------------------------------------------------
+archive_current_directory() {
+  timestamp=$(date +"%Y%m%d_%H%M%S")
+  archive_name="archive_$timestamp.tar.gz"
+  echo "Archiving current directory to $archive_name"
+  tar -czvf $archive_name .
+}
 
 #---------------------------------------------------------
 # End of file
